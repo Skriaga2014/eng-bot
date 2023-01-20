@@ -1,4 +1,4 @@
-#'5891767200:AAGSRE4qcouHrjJiwXjV4-nW2Ro_endLw0M'
+#'5817828615:AAFf_L7BwZPLprTn-vPXQiQ1QtXFaxfL2IM'
 from aiogram.types import ReplyKeyboardRemove, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.markdown import hide_link
@@ -7,7 +7,7 @@ import const
 from questions import q
 import random
 
-bot = Bot(token=const.token)
+bot = Bot(token='5817828615:AAFf_L7BwZPLprTn-vPXQiQ1QtXFaxfL2IM')
 dp = Dispatcher(bot)
 
 #global var

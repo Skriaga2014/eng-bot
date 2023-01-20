@@ -146,3 +146,25 @@ date,variants,type,id,task,target,answer,variants,result
 2023-01-19 22:12:03.750460,False,en,2589,в наше время,nowadays,nowadays,1
 2023-01-19 22:12:10.433366,False,en,10006,злиться на,angry with,angry with,1
 2023-01-19 22:12:52.922687,False,en,10006,злиться на,angry with,vc,0
+2023-01-20 11:21:35.397095,False,en,917,['предложение', 'приговор'],sentence,sentence,1
+2023-01-20 12:16:15.633412,False,en,2589,в наше время,nowadays,nowadays,1
+2023-01-20 12:16:23.096748,False,en,10005,тратить на,spend on,spend on,1
+2023-01-20 12:16:40.610243,False,en,1633,очевидно,obvious,obvious,1
+2023-01-20 12:16:56.658209,False,en,429,брюки,trousers,trousers,1
+2023-01-20 12:17:06.437359,False,en,3324,салат,salad,salad,1
+2023-01-20 12:17:16.623619,False,en,3324,салат,salad,salad,1
+2023-01-20 12:17:23.613011,False,en,10001,идти гулять,go for a walk,go for a walk,1
+2023-01-20 12:17:33.204861,False,en,10006,злиться на,angry with,angry with,1
+2023-01-20 12:17:42.046306,False,en,10006,злиться на,angry with,angry with,1
+2023-01-20 12:17:47.659430,False,en,10003,примерять,try on,try on,1
+2023-01-20 12:18:01.110269,False,en,10001,идти гулять,go for a walk,go for a walk,1
+2023-01-20 12:21:04.832152,False,en,10003,примерять,try on,try on,1
+2023-01-20 12:21:17.841379,False,en,1633,очевидно,obvious,obvious,1
+2023-01-20 12:21:32.801545,False,en,10005,тратить на,spend on,spend on,1
+2023-01-20 12:21:40.677528,False,en,429,брюки,trousers,trousers,1
+2023-01-20 12:22:07.386046,False,en,917,['предложение', 'приговор'],sentence,sentence,1
+2023-01-20 12:22:11.764116,False,en,2589,в наше время,nowadays,nowadays,1
+2023-01-20 12:22:20.174158,False,en,5043,удивительно,surprising,surprising,1
+2023-01-20 12:22:25.289121,False,en,10004,эта обувь,these shoes,these shoes,1
+2023-01-20 12:22:38.602045,False,en,5043,удивительно,surprising,surprising,1
+2023-01-20 12:22:45.809860,False,en,1484,отказывать,refuse,refuse,1

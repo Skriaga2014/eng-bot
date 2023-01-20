@@ -105,7 +105,7 @@ def run(base, lang):
         answer = input(f'{print_task}: ')
 
     check = get_check(answer, right_answer)
-    print(sample)
+    print(sample.replace(right_answer, right_answer.upper()))
 
     return {'check': check, 'idx': idx, 'task': task,
             'right_answer': right_answer,
