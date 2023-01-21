@@ -1,10 +1,9 @@
 id,word,transcription,translate,shows,result,sample
-10006,angry with,[ˈæŋɡrɪ wɪð],злиться на,4,3,I was very angry with her for leaving me
-10001,go for a walk,[ɡoʊ fər æ wɔːk],идти гулять,11,11,Maybe we could go for a walk
-1326,fluently,[ˈfluːəntlɪ],бегло/свободно,12,11,Geniuses produce becouse they think fluently
+10001,go for a walk,[ɡoʊ fər æ wɔːk],идти гулять,12,12,Maybe we could go for a walk
 1484,refuse,[ˈrefjuːs],отказывать,13,12,Can even refuse
 638,foreign,[ˈfɔːrən],иностранный,11,11,She has a foreign accent
-716,admire,[ədˈmaɪər],восхищаться,14,11,I admire the precision of her work
+10006,angry with,[ˈæŋɡrɪ wɪð],злиться на,4,3,I was very angry with her for leaving me
+10007,complain about,[],жаловаться на,1,1,Don't complain about him to the teacher
 5043,surprising,[sərˈpraɪzɪŋ],удивительно,12,12,This is not surprising
 10004,these shoes,[ðiːz ʃuːz],эта обувь,13,12,I can only wear these shoes and sleep in one bed
 2589,nowadays,[ˈnaʊədeɪz],в наше время,17,12,Also nowadays he has followers
@@ -14,3 +13,7 @@ id,word,transcription,translate,shows,result,sample
 1633,obvious,[ˈɑːbvɪəs],очевидно,12,12,We often foget this seemingly obvious fact
 10003,try on,[ˈtraɪ ɑːn],примерять,14,12,The visitors can also try on the costumes and be photographed in them
 3324,salad,[ˈsæləd],салат,12,12,Newer cut the salad with a knife
+1326,fluently,[ˈfluːəntlɪ],бегло/свободно,14,13,Geniuses produce becouse they think fluently
+716,admire,[ədˈmaɪər],восхищаться,16,13,I admire the precision of her work
+10008,get on,,сесть в,0,0,Just get on a boat and sail away
+10009,going to,,собираться (что-либо сделать),0,0,I'm going to go to the shop
