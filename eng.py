@@ -132,8 +132,8 @@ LOG_FILE = os.path.join(os.getcwd(), 'log.csv')
 pd.set_option('display.expand_frame_repr', False)
 
 if __name__ == '__main__':
-    while 1:
-        go()
+    #while 1:
+    go()
 
 # while 1:
 #     go()
