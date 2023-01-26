@@ -1,8 +1,9 @@
-def get_task(base, lang):
-    sample = base.sample()
+def get_task(base_, lang):
+    sample = base_.sample()
+    smpl = sample['sample'].iloc[0]
     if lang == 'en':
         task = sample['translate'].iloc[0]
-        smpl = sample['sample'].iloc[0]
+
         #task = f'{task}\n{smpl}'
         right_answer = sample['word'].iloc[0]
     else:
