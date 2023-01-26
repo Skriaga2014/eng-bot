@@ -1,4 +1,6 @@
 #'5817828615:AAFf_L7BwZPLprTn-vPXQiQ1QtXFaxfL2IM'
+import time
+
 from aiogram.types import ReplyKeyboardRemove, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.markdown import hide_link
@@ -58,11 +60,12 @@ async def echo(message: types.Message):
         answer = message.text
         check, check_txt = task.get_check(answer, right_answer)
         await message.answer(check_txt)
+        await message.answer(sample.replace(right_answer, right_answer.upper()))
         log['answer'] = answer
         log['check'] = check
         base.to_log(log, SHOW_VARIANTS)
         base.base_update(base_, base_add, log)
-
+        time.sleep(1)
         base_, base_add = base.get_base(VARS_NUM)
         print_task, right_answer, sample, log = run(base_, lang)
         await message.answer(print_task)

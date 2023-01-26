@@ -19,9 +19,9 @@ def get_check(answer, right_answer):
     if answer == right_answer or answer in right_answer:
         #print('yes')
         #print(right_sample)
-        return 1, 'yes'
+        return 1, 'YES!'
     else:
         # print('no')
         # print(f'({right_answer})')
-        return 0, f'no\n{right_answer}'
+        return 0, f'NO!\n{right_answer}'
 
