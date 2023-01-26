@@ -176,3 +176,33 @@ date,variants,type,id,task,target,answer,variants,result
 2023-01-21 01:36:32.102644,False,en,10001,идти гулять,go for a walk,go for a walk,1
 2023-01-25 21:41:42.215294,False,en,10009,собираться (что-либо сделать),going to,jfd,0
 2023-01-25 22:53:22.008775,False,en,638,иностранный,foreign,foreign,1
+2023-01-25 23:38:07.698243,False,en,10007,жаловаться на,complain about,fdsf,0
+2023-01-25 23:59:03.758811,False,en,10004,эта обувь,these shoes,rere,0
+2023-01-26 00:15:17.088139,False,en,10006,злиться на,angry with,ret,0
+2023-01-26 00:15:22.348807,False,en,10007,жаловаться на,complain about,erty,0
+2023-01-26 00:15:28.762179,False,en,10006,злиться на,angry with,trfg,0
+2023-01-26 00:15:33.674699,False,en,10009,собираться (что-либо сделать),going to,redg,0
+2023-01-26 00:20:11.847765,False,en,10009,собираться (что-либо сделать),going to,rtdfgf,0
+2023-01-26 00:31:29.931831,False,en,10009,собираться (что-либо сделать),going to,fddf,0
+2023-01-26 00:36:40.288297,False,en,10003,примерять,try on,wdsfs,0
+2023-01-26 02:31:28.641290,False,en,638,иностранный,foreign,xzcxxx,0
+2023-01-26 02:31:38.797794,False,en,10008,сесть в,get on,xzcxxx,0
+2023-01-26 02:32:38.304573,False,en,10009,собираться (что-либо сделать),going to,xzcxxx,0
+2023-01-26 02:32:50.912340,False,en,3324,салат,salad,xzcxxx,0
+2023-01-26 02:33:03.328666,False,en,10006,злиться на,angry with,xzcxxx,0
+2023-01-26 02:35:01.743959,False,en,10007,жаловаться на,complain about,gfd,0
+2023-01-26 02:35:12.189971,False,en,10006,злиться на,angry with,angry with,1
+2023-01-26 02:35:26.410116,False,en,10007,жаловаться на,complain about,complain about,1
+2023-01-26 02:35:33.832397,False,en,10009,собираться (что-либо сделать),going to,going to,1
+2023-01-26 02:36:49.428728,False,en,429,брюки,trousers,trousers,1
+2023-01-26 02:36:58.003799,False,en,10009,собираться (что-либо сделать),going to,going to,1
+2023-01-26 02:37:16.290983,False,en,10006,злиться на,angry with,angry with,1
+2023-01-26 02:37:25.139368,False,en,10007,жаловаться на,complain about,complain about,1
+2023-01-26 02:38:15.727151,False,en,10009,собираться (что-либо сделать),going to,going to,1
+2023-01-26 02:38:22.331355,False,en,10006,злиться на,angry with,angry with,1
+2023-01-26 02:38:28.168276,False,en,5043,удивительно,surprising,surprising,1
+2023-01-26 02:38:33.083507,False,en,10008,сесть в,get on,get on,1
+2023-01-26 02:38:39.021378,False,en,10007,жаловаться на,complain about,angry with,0
+2023-01-26 02:38:52.180517,False,en,10008,сесть в,get on,get on,1
+2023-01-26 02:38:59.333993,False,en,10007,жаловаться на,complain about,complain about,1
+2023-01-26 02:39:19.236450,False,en,10008,сесть в,get on,get on,1

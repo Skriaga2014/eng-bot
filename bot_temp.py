@@ -12,30 +12,8 @@ import base
 import task
 
 
-# load dictionary
-
-
-
-# send to log
-
-
-
-# update my dict
-
-
-
-# get word for translate
-
-
-
-# check answer right or wrong
-
-
-
-
-# show task
 def run(base_, lang):
-    #idx, task, right_answer = get_task(base, lang)
+
     idx, task_, right_answer, sample = task.get_task(base_, lang)
 
     print_task = ', '.join(task_) if type(task_) == list else task_
@@ -53,14 +31,7 @@ def run(base_, lang):
     # else:
     #     answer = input(f'{print_task}: ')
 
-    #check = task.get_check(answer, right_answer, sample)
-    #print(sample.replace(right_answer, right_answer.upper()))
     log = {'idx': idx, 'task': task_, 'right_answer': right_answer, 'lang': lang}
-
-    #'answer': answer
-    #'check': check
-
-
 
     return print_task, right_answer, sample, log
 
@@ -68,8 +39,6 @@ def run(base_, lang):
 SHOW_VARIANTS = False    # показывать ли варианты ответов
 VARS_NUM = 5
 lang = 'en'
-
-
 
 base_, base_add = base.get_base(VARS_NUM)
 print_task, right_answer, sample, log = run(base_, lang)
@@ -79,7 +48,6 @@ answer = input('Your answer:')
 check = task.get_check(answer, right_answer)
 log['answer'] = answer
 log['check'] = check
-
 base.to_log(log, SHOW_VARIANTS)
 base.base_update(base_, base_add, log)
 
