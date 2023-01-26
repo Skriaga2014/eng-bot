@@ -84,6 +84,7 @@ def get_check(answer, right_answer):
         return 0
 
 
+
 # show task
 def run(base, lang):
     #idx, task, right_answer = get_task(base, lang)
