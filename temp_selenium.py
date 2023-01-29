@@ -1,3 +1,9 @@
 from selenium import webdriver
+from bs4 import BeautyfulSoup
 
-base = selenium.get
+driver = webdriver.Chrome('webdriver')
+driver.get('')
+
+
+
+
