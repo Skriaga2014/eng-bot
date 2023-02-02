@@ -5,8 +5,7 @@ from aiogram.types import ReplyKeyboardRemove, ReplyKeyboardMarkup, KeyboardButt
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.markdown import hide_link
 from aiogram import Bot, Dispatcher, executor, types
-#import const
-#from questions import q
+
 import random
 import base
 import task
