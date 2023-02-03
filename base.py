@@ -6,9 +6,9 @@ import datetime as dt
 def get_base(VARS_NUM):
     # проверка, есть ли nan в shows и/или result
     try:
-        base = pd.read_csv(BASE_FILE, dtype={'shows': int, 'result': int})
+        base = pd.read_csv(BASE_FILE, sep=';', dtype={'shows': int, 'result': int})
     except ValueError:  # если nan найдено
-        base = pd.read_csv(BASE_FILE).fillna(0)
+        base = pd.read_csv(BASE_FILE, sep=';').fillna(0)
         base = base.astype({'shows': 'int32', 'result': int})
     except KeyError:    # если проблема с базой в результате сбоя предыдущей выгрузки
         base = pd.read_csv(BASE_FILE_RESERVE).fillna(0)
@@ -29,7 +29,7 @@ def get_base(VARS_NUM):
 def to_log(log, SHOW_VARIANTS):    # date,variants, type,id,task,target,answer,result
     line = f'\n{dt.datetime.now()},{SHOW_VARIANTS},'
     log_items = ['lang', 'idx', 'task', 'right_answer', 'answer', 'check']
-    line += ','.join([str(log[i]) for i in log_items])
+    line += ';'.join([str(log[i]) for i in log_items])
 
     with open(LOG_FILE, 'a') as f:
         f.write(line)
