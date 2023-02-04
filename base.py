@@ -11,7 +11,7 @@ def get_base(VARS_NUM):
         base = pd.read_csv(BASE_FILE, sep=';').fillna(0)
         base = base.astype({'shows': 'int32', 'result': int})
     except KeyError:    # если проблема с базой в результате сбоя предыдущей выгрузки
-        base = pd.read_csv(BASE_FILE_RESERVE).fillna(0)
+        base = pd.read_csv(BASE_FILE_RESERVE, sep=';').fillna(0)
         base = base.astype({'shows': 'int32', 'result': int})
 
     if len(base) < VARS_NUM:    # если количество слов в базе меньше
@@ -27,7 +27,9 @@ def get_base(VARS_NUM):
 
 
 def to_log(log, SHOW_VARIANTS):    # date,variants, type,id,task,target,answer,result
-    line = f'\n{dt.datetime.now()},{SHOW_VARIANTS},'
+    line = f'\n{dt.datetime.now()};{SHOW_VARIANTS};'
+    if type(log['task']) == list:
+        log['task'] = '/'.join(log['task'])
     log_items = ['lang', 'idx', 'task', 'right_answer', 'answer', 'check']
     line += ';'.join([str(log[i]) for i in log_items])
 
@@ -41,8 +43,8 @@ def base_update(base, base_add, log):
         base.loc[base['id'] == log['idx'], ['result']] += 1
     base_final = pd.concat([base, base_add])
 
-    base_final.to_csv(BASE_FILE, index=0)
-    base_final.to_csv(BASE_FILE_RESERVE, index=0)
+    base_final.to_csv(BASE_FILE, index=0, sep=';')
+    base_final.to_csv(BASE_FILE_RESERVE, index=0, sep=';')
 
 
 BASE_FILE = os.path.join(os.getcwd(), 'my_dict.csv')

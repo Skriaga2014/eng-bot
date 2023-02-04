@@ -15,8 +15,11 @@ base_final = base_final.merge(base_transcription, left_on='eng', right_on='eng',
 base_final['rus'] = [base_final['rus_y'][i] if base_final['rus_y'][i] != '' else base_final['rus_x'][i] for i in range(len(base_final))]
 #base_final = base_final.set_index('id')
 
-WORD = 'suggest'
+WORDS = 'suggest, supply, heat, plumb'
+WORDS = WORDS.split(', ')
+print(WORDS)
+WORDS = 'consider'
 base_final['id'] = base_final['id'].astype(str)
-word_to_line = base_final.loc[base_final['eng'] == WORD, ['id', 'eng', 'transcription', 'rus']]
+word_to_line = base_final.loc[base_final['eng'] == WORDS, ['id', 'eng', 'transcription', 'rus']]
 print(';'.join(word_to_line.values.flatten().tolist()))
 

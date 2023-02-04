@@ -56,7 +56,7 @@ async def url_command(message: types.Message):
 async def echo(message: types.Message):
     global answer, print_task, right_answer, sample, log, base_, base_add
     if answer != 0:
-        answer = message.text
+        answer = message.text.lower()
         check, check_txt = task.get_check(answer, right_answer)
         await message.answer(check_txt)
         await message.answer(sample.replace(right_answer, right_answer.upper()))
