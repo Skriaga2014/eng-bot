@@ -42,7 +42,7 @@ def base_update(base, base_add, log):
     if log['check']:
         base.loc[base['id'] == log['idx'], ['result']] += 1
     base_final = pd.concat([base, base_add])
-
+    base_final = base_final.sort_values(by=['result'])
     base_final.to_csv(BASE_FILE, index=0, sep=';')
     base_final.to_csv(BASE_FILE_RESERVE, index=0, sep=';')
 

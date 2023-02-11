@@ -12,7 +12,7 @@ import task
 
 
 def run(base_, lang):
-    idx, task_, right_answer, sample = task.get_task(base_, lang)
+    idx, task_, right_answer, transcription, sample = task.get_task(base_, lang)
     print_task = ', '.join(task_) if type(task_) == list else task_
     # if SHOW_VARIANTS:
     #     print(print_task)
@@ -28,7 +28,7 @@ def run(base_, lang):
     # else:
     #     answer = input(f'{print_task}: ')
     log = {'idx': idx, 'task': task_, 'right_answer': right_answer, 'lang': lang}
-    return print_task, right_answer, sample, log
+    return print_task, right_answer, transcription, sample, log
 
 
 bot = Bot(token='5817828615:AAFf_L7BwZPLprTn-vPXQiQ1QtXFaxfL2IM')
@@ -37,7 +37,7 @@ dp = Dispatcher(bot)
 answer = 0
 SHOW_VARIANTS = False    # показывать ли варианты ответов
 VARS_NUM = 5
-lang = 'en'
+# lang = 'en'
 
 
 @dp.message_handler(commands=['start'])
@@ -46,36 +46,52 @@ async def send_welcome(message: types.Message):
     await message.answer("Hi, I'm a ReedOriginal_Bot! \nFor beginning send any message:")
 
 
-@dp.message_handler(commands='task')
+@dp.message_handler(commands=['add'])
 async def url_command(message: types.Message):
-    await message.answer_photo(open(f"images/intro.jpg", 'rb'))
-    await message.answer('Полезные ссылки:', reply_markup=taskkb)
+    data = message.get_args()
+    with open('new_words.csv', 'a') as file:
+        file.write(f'{data}\n')
+    file.close()
 
 
 @dp.message_handler()
 async def echo(message: types.Message):
-    global answer, print_task, right_answer, sample, log, base_, base_add
+    global answer, print_task, right_answer, transcription, sample, log, base_, base_add, lang
+
     if answer != 0:
+
+
         answer = message.text.lower()
         check, check_txt = task.get_check(answer, right_answer)
-        await message.answer(check_txt)
-        await message.answer(sample.replace(right_answer, right_answer.upper()))
+        if lang == 'ru':
+            await message.answer(check_txt+'1')
+            await message.answer(sample.replace(right_answer, right_answer.upper())+'2')
+        else:
+            await message.answer(f'{check_txt}')
+            await message.answer(sample.replace(print_task, print_task.upper())+'4')
         log['answer'] = answer
         log['check'] = check
         base.to_log(log, SHOW_VARIANTS)
         base.base_update(base_, base_add, log)
         time.sleep(1)
+        lang = random.choice(['ru', 'en'])
         base_, base_add = base.get_base(VARS_NUM)
-        print_task, right_answer, sample, log = run(base_, lang)
-        await message.answer(print_task)
-
-        # answer = input(print_task)
+        print_task, right_answer, transcription, sample, log = run(base_, lang)
+        if lang == 'en':
+            await message.answer(f'{print_task}\n{transcription}5')
+        else:
+            await message.answer(print_task+'6')
 
 
     else:
+        lang = random.choice(['ru', 'en'])
         base_, base_add = base.get_base(VARS_NUM)
-        print_task, right_answer, sample, log = run(base_, lang)
-        await message.answer(print_task)
+        print_task, right_answer, transcription, sample, log = run(base_, lang)
+
+        if lang == 'en':
+            await message.answer(f'{print_task}\n{transcription}7')
+        else:
+            await message.answer(print_task+'8')
         answer = message.text
 
 
