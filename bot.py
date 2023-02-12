@@ -62,13 +62,28 @@ async def echo(message: types.Message):
 
 
         answer = message.text.lower()
-        check, check_txt = task.get_check(answer, right_answer)
+        check = task.get_check(answer, right_answer)
         if lang == 'ru':
-            await message.answer(check_txt+'1')
-            await message.answer(sample.replace(right_answer, right_answer.upper())+'2')
+            if check:
+                await message.answer('YES!')
+            else:
+                await message.answer(f'NO!\n{right_answer}\n{transcription}')
+            await message.answer(sample.replace(right_answer, right_answer.upper()))
         else:
-            await message.answer(f'{check_txt}')
-            await message.answer(sample.replace(print_task, print_task.upper())+'4')
+            verdict = 'YES!'
+            if not check:
+                verdict = f'NO!\n{right_answer}'
+            if ',' in right_answer:
+                # await message.answer(f'{check_txt}\n{right_answer}')
+                if check:
+                    await message.answer(verdict + '\n' + right_answer)
+                if not check:
+                    await message.answer(verdict)
+            else:
+                await message.answer(verdict)
+            await message.answer(sample.replace(print_task, print_task.upper()))    # worked
+            # await message.answer(check_txt)
+            # await message.answer(sample.replace(print_task, print_task.upper()))
         log['answer'] = answer
         log['check'] = check
         base.to_log(log, SHOW_VARIANTS)
@@ -78,9 +93,9 @@ async def echo(message: types.Message):
         base_, base_add = base.get_base(VARS_NUM)
         print_task, right_answer, transcription, sample, log = run(base_, lang)
         if lang == 'en':
-            await message.answer(f'{print_task}\n{transcription}5')
+            await message.answer(f'{print_task}\n{transcription}')
         else:
-            await message.answer(print_task+'6')
+            await message.answer(print_task)
 
 
     else:
@@ -89,9 +104,9 @@ async def echo(message: types.Message):
         print_task, right_answer, transcription, sample, log = run(base_, lang)
 
         if lang == 'en':
-            await message.answer(f'{print_task}\n{transcription}7')
+            await message.answer(f'{print_task}\n{transcription}')
         else:
-            await message.answer(print_task+'8')
+            await message.answer(print_task)
         answer = message.text
 
 

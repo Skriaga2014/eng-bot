@@ -13,13 +13,11 @@ def get_task(base_, lang):
 
 
 def get_check(answer, right_answer):
-
     if answer == right_answer:
-        return 1, 'YES!'
+        return 1
     elif ',' in right_answer and answer in right_answer.split(', '):
-        return 1, 'YES!'
+        return 1
     else:
-        # print('no')
-        # print(f'({right_answer})')
-        return 0, f'NO!\n{right_answer}'
+        return 0
+        # return 0, f'NO!\n{right_answer}'
 
