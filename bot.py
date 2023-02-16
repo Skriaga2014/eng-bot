@@ -34,15 +34,16 @@ def run(base_, lang):
 bot = Bot(token='5817828615:AAFf_L7BwZPLprTn-vPXQiQ1QtXFaxfL2IM')
 dp = Dispatcher(bot)
 
+count = 0
 answer = 0
 SHOW_VARIANTS = False    # показывать ли варианты ответов
 VARS_NUM = 5
+FREQUENCY_OF_OLD = 3
 # lang = 'en'
 
 
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
-    #await message.answer_photo(open(f"images/intro.jpg", 'rb'))
     await message.answer("Hi, I'm a ReedOriginal_Bot! \nFor beginning send any message:")
 
 
@@ -56,7 +57,7 @@ async def url_command(message: types.Message):
 
 @dp.message_handler()
 async def echo(message: types.Message):
-    global answer, print_task, right_answer, transcription, sample, log, base_, base_add, lang
+    global answer, print_task, right_answer, transcription, sample, log, base_, base_add, lang, count
 
     if answer != 0:
 
@@ -90,7 +91,14 @@ async def echo(message: types.Message):
         base.base_update(base_, base_add, log)
         time.sleep(1)
         lang = random.choice(['ru', 'en'])
-        base_, base_add = base.get_base(VARS_NUM)
+        count += 1
+
+        if count % FREQUENCY_OF_OLD == 0:
+            VARS_NUM_NEW = float('inf')
+        else:
+            VARS_NUM_NEW = VARS_NUM
+
+        base_, base_add = base.get_base(VARS_NUM_NEW)
         print_task, right_answer, transcription, sample, log = run(base_, lang)
         if lang == 'en':
             await message.answer(f'{print_task}\n{transcription}')

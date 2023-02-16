@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -13,7 +15,8 @@ with open('for_pars_words.txt', 'r') as file:
 print(vocabulary, len(vocabulary))
 driver = webdriver.Chrome()
 
-with open('pars_result.csv', 'r') as file:
+time.sleep(10)
+with open('pars_result2.csv', 'r') as file:
     pars_list = file.read().split('\n')
     file.close()
 
@@ -33,8 +36,8 @@ for word in vocabulary:
             rus = driver.find_element(By.CLASS_NAME, 't_inline_en').text
         except:
             rus = ''
-        with open('pars_result.csv', 'a') as file:
-            file.write(f'{word};{transcription};{rus}\n')
+        with open('pars_result2.csv', 'a') as file:
+            file.write(f'{word};{transcription};{rus};{};\n')
             file.close()
 
 
