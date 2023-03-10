@@ -31,6 +31,8 @@ def run(base_, lang):
     return print_task, right_answer, transcription, sample, log
 
 
+version = 0.02
+
 bot = Bot(token='5817828615:AAFf_L7BwZPLprTn-vPXQiQ1QtXFaxfL2IM')
 dp = Dispatcher(bot)
 
@@ -53,6 +55,10 @@ async def url_command(message: types.Message):
     with open('new_words.csv', 'a') as file:
         file.write(f'{data}\n')
     file.close()
+
+@dp.message_handler(commands=['version', 'ver'])
+async def url_command(message: types.Message):
+    await message.answer(version)
 
 
 @dp.message_handler()
